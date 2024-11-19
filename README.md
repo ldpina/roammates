@@ -53,11 +53,11 @@ GIF created with ScreentoGif
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Some challenges I ran into was finding a way to get the comments to update right when someone decides to comment but was able to solve it by rerendering the comments, a similar problem occured with the deletetion of a post but was not able to figure it out as of 11/18/24. Overall the project went smoothly but was definitely required a lot of research for some features I wanted like trying to get some components to coexist with each other.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2024 Luis Pina
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

@@ -1,0 +1,50 @@
+
+.editPostContainer {
+width: 600px;
+padding: 1.5rem;
+background-color: #f8f9fa;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+text-align: center; 
+}
+
+.editPostContainer h1 {
+margin-bottom: 1rem;
+color: #333;
+}
+
+.editPostForm {
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
+
+.editPostForm label {
+display: flex;
+flex-direction: column;
+font-size: 1rem;
+color: #555;
+}
+
+.editPostForm input,
+.editPostForm textarea {
+padding: 0.5rem;
+border: 1px solid #ccc;
+border-radius: 4px;
+font-size: 1rem;
+}
+
+.editPostForm button {
+padding: 0.75rem 1rem;
+font-size: 1rem;
+color: #fff;
+background-color: #7ea07e;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.editPostForm button:hover {
+background-color: #679267;
+}

@@ -36,16 +36,16 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 * [x] Created a function that can display a time a post was created by what the current time is
-* [ ] Displayed posts with pictures on the front page for aesthetics 
+* [x] Displayed posts with pictures on the front page for aesthetics 
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />](https://github.com/ldpina/roammates/blob/main/finalProj.gif)
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
+GIF created with ScreentoGif  
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows

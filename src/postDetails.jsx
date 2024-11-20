@@ -148,8 +148,9 @@ const handleDelete = async () => {
                 <img className="deleteIcon" src="/src/icons/delete.png" alt="delete" />
             </button>
         </div>
-         
-      <img src={post.img} alt="No Img" className="postImage" />
+        
+        {post.img && <img src={post.img} alt="Post" className="postImage" />}
+
       <p>{post.content}</p>
 
       <div className="commentSection">

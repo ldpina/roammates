@@ -3,7 +3,9 @@
 }
 
 body{
-    background-color: #DCE5DC;
+    /* background-color: rgb(226, 243, 248); */
+    background-image: url('https://i.redd.it/fw3pctfene911.jpg');
+    background-size: cover;
 }
 
 .topNav {
@@ -11,7 +13,7 @@ body{
   justify-content: center; 
   align-items: center; 
   padding: 0.4rem;
-  background-color: #7EA07E; 
+  background-color: #1b4172; 
   width: 100vw;
   box-sizing: border-box; 
   position: fixed;

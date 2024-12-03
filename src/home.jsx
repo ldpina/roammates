@@ -3,6 +3,8 @@ import { Link, useOutletContext } from 'react-router-dom';
 import { supabase } from './client';
 import './home.css';
 import { timeAgo } from './utils';
+import upvoteIcon from './icons/upvote.png';
+
 
 function Home() {
   const { searchQuery } = useOutletContext();  
@@ -58,7 +60,7 @@ function Home() {
                 <p className="timestamp">Posted {timeAgo(post.created_at)}</p>
                 <div className="titleUpvote">
                   <h2>{post.title}</h2>
-                  <img className="upvoteButton" src="/src/icons/upvote.png" />
+                  <img className="upvoteButton" src={upvoteIcon} alt="Upvote Icon" />
                   <p className="upvoteCount">{post.upvotes}</p>
                 </div>
                 <img src={post.img} className="postImage" />

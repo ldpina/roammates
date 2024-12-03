@@ -4,6 +4,10 @@ import { useParams } from 'react-router-dom';
 import { supabase } from './client';
 import './postDetails.css';
 import { timeAgo } from './utils';
+import upvoteIcon from './icons/upvote.png';
+import editIcon from './icons/edit.png';
+import deleteIcon from './icons/delete.png';
+
 
 function PostDetails() {
   const { postId } = useParams(); 
@@ -135,17 +139,17 @@ const handleDelete = async () => {
         <p>Posted: {timeAgo(post.created_at)}</p>
         <div className="titleUpvote">
             <button onClick={handleUpvote} className="upvoteButton">
-                <img className="upvoteIcon" src="/src/icons/upvote.png" alt="Upvote" />
+             <img className="upvoteIcon" src={upvoteIcon} alt="Upvote" />
             </button>
             <p className="postUpvotes">{post.upvotes}</p>
             <h1>{post.title}</h1>
             <button className="editButton">
                 <Link to={`/edit/${post.id}`}>
-                    <img className="editIcon" src="/src/icons/edit.png" alt="edit" />
+                <img className="editIcon" src={editIcon} alt="Edit" />
                 </Link>
             </button>
             <button onClick={handleDelete} className="deleteButton">
-                <img className="deleteIcon" src="/src/icons/delete.png" alt="delete" />
+              <img className="deleteIcon" src={deleteIcon} alt="Delete" />
             </button>
         </div>
         

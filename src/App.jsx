@@ -1,6 +1,8 @@
 import './App.css';
 import { Link, Outlet } from 'react-router-dom';
 import { useState } from 'react'; 
+import homeIcon from './icons/homeICON2.png';
+
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -17,7 +19,7 @@ function App() {
         />
         <div className="buttonImageContainer">
           <Link to="/">
-            <img src="/src/icons/homeICON2.png" alt="Home Icon" />
+            <img src={homeIcon} alt="Home Icon" />
           </Link>
           <Link className='createButton' to="/create-new-post">
             Create Post

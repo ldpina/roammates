@@ -35,25 +35,34 @@
 }
 
 .postImage {
-  max-width: 45%;
+  width: 55%;
   height: auto;   
+  max-height: 15em;
   border-radius: 10px;
   margin-top: 10px;
 }
 
 .upvoteButton{
-  width:1.5rem;
-  height:1.5rem;
+  width:20px;
+  height:20px;
 }
+
 .titleUpvote .upvoteCount{
-  font-size: 1.5rem;
-  color: black;
+  font-size: 20px;
+  color: white;
+  margin:0;
 }
 
 .titleUpvote{
   display: flex;
   align-items: center;
   gap: 1px;
+  margin-top: 5px;
+  background-color: #2c66b3;
+  width: fit-content;
+  margin-left: auto;
+  padding: 2px 10px 2px 10px;
+  border-radius: 30px;
 }
 
 .sortControls {
@@ -76,5 +85,15 @@
   margin: 0;
   padding: 0; 
   font-size: small;
+}
+
+.postLocation{
+  background-color: #1b4172;
+  border-radius: 30px;
+  width: fit-content;
+  color:white;
+  padding: 5px;
+  font-size: small;
+  
 }
 

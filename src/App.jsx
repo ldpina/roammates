@@ -26,8 +26,7 @@ function App() {
           </Link>
         </div>
       </div>
-
-      {/* Page content*/}
+      
       <div className="pageContent">
         <Outlet context={{ searchQuery }} /> 
       </div>

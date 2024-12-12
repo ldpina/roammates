@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom'; 
 import { supabase } from './client';
 import './postDetails.css';
 import { timeAgo } from './utils';
@@ -14,6 +14,7 @@ function PostDetails() {
   const [post, setPost] = useState(null);
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -65,7 +66,6 @@ function PostDetails() {
 const handleDelete = async () => {
     try {
       
-      // first delete the comments
       const { error: deleteCommentsError } = await supabase
         .from('comments')
         .delete()
@@ -136,28 +136,39 @@ const handleDelete = async () => {
 
   return (
     <div className="postDetails">
-        <p>Posted: {timeAgo(post.created_at)}</p>
-        <div className="titleUpvote">
-            <button onClick={handleUpvote} className="upvoteButton">
-             <img className="upvoteIcon" src={upvoteIcon} alt="Upvote" />
-            </button>
-            <p className="postUpvotes">{post.upvotes}</p>
-            <h1>{post.title}</h1>
+      <div className = "actionButtons">
+          <p>Posted: {timeAgo(post.created_at)}</p>
             <button className="editButton">
                 <Link to={`/edit/${post.id}`}>
                 <img className="editIcon" src={editIcon} alt="Edit" />
                 </Link>
             </button>
             <button onClick={handleDelete} className="deleteButton">
-              <img className="deleteIcon" src={deleteIcon} alt="Delete" />
+                <img className="deleteIcon" src={deleteIcon} alt="Delete" />
             </button>
+      </div>
+
+        <h1>{post.title}</h1>
+
+        {post.location && <p className="postLoc">{post.location}</p>}
+
+        <div className="imageWrapper">
+          {post.img && <img src={post.img} alt="Post" className="image" />}
+        </div>
+
+       
+      <p className = "content">{post.content}</p>
+
+      <div className="buttonWrapper">
+          <button onClick={handleUpvote} className="upvoteButton2">
+            <img className="upvoteIcon2" src={upvoteIcon} alt="Upvote" />
+            <p className="postUpvotes">{post.upvotes}</p>
+          </button>
         </div>
         
-        {post.img && <img src={post.img} alt="Post" className="postImage" />}
-
-      <p>{post.content}</p>
 
       <div className="commentSection">
+
         <h3>Comments</h3>
         <form onSubmit={handleAddComment}>
           <textarea value={newComment} onChange={handleCommentChange} placeholder="Write a comment..." rows="2" className="commentInput"

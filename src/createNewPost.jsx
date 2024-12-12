@@ -7,6 +7,7 @@ function CreateNewPost() {
   const [postTitle, setPostTitle] = useState('');
   const [postContent, setPostContent] = useState('');
   const [postImg, setPostImg] = useState('');
+  const [postLocation, setPostLocation] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false); 
   const [error, setError] = useState(null);  
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ function CreateNewPost() {
       const { data, error } = await supabase
         .from('posts')  
         .insert([
-          {title:postTitle, content:postContent, img:postImg}
+          {title:postTitle, content:postContent, img:postImg, location:postLocation}
         ]);
 
       if (error) throw error;
@@ -47,6 +48,15 @@ function CreateNewPost() {
             onChange={(e) => setPostTitle(e.target.value)}
             required
           />
+        <label>
+          Location:
+          <textarea
+            type="text"
+            value={postLocation}
+            onChange={(e) => setPostLocation(e.target.value)}
+            placeholder='(city,country)'
+          />
+        </label>
         </label>
         <label>
           Content:

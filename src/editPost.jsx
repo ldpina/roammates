@@ -44,6 +44,7 @@ function EditPost() {
         title: post.title,
         content: post.content,
         img: post.img,
+        location: post.location,
       })
       .eq('id', postId);
 
@@ -70,6 +71,15 @@ function EditPost() {
             value={post.title}
             onChange={handleChange}
             required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="location">Location:</label>
+          <textarea
+            id="location"
+            name="location"
+            value={post.location}
+            onChange={handleChange}
           />
         </div>
         <div className="form-group">

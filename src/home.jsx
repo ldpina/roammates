@@ -58,12 +58,17 @@ function Home() {
             <Link to={`/post/${post.id}`} key={post.id} className="postLink">
               <div className="postCard">
                 <p className="timestamp">Posted {timeAgo(post.created_at)}</p>
+                <h2>{post.title}</h2>
+                {post.location && <p className="postLocation">{post.location}</p>}
+
+                <div className="imageWrapper">
+                  <img src={post.img} className="postImage" />
+                </div>
+
                 <div className="titleUpvote">
-                  <h2>{post.title}</h2>
                   <img className="upvoteButton" src={upvoteIcon} alt="Upvote Icon" />
                   <p className="upvoteCount">{post.upvotes}</p>
                 </div>
-                <img src={post.img} className="postImage" />
               </div>
             </Link>
           ))

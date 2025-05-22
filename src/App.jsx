@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <div className="topNav">
-        <h1>RoamMates</h1>
+        <Link to = "/" className = "logoRoammates">RoamMates</Link>
         <input type="text" placeholder="Search by title..." value={searchQuery}  onChange={handleSearchChange} className="searchInput"
         />
         <div className="buttonImageContainer">

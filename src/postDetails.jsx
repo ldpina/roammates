@@ -75,7 +75,7 @@ const handleDelete = async () => {
         throw deleteCommentsError; 
       }
   
-      // Now delete the post
+      //delete the post
       const { error: deletePostError } = await supabase
         .from('posts')
         .delete()

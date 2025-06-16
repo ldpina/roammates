@@ -11,6 +11,10 @@ function Home() {
   const [posts, setPosts] = useState([]);
   const [sortBy, setSortBy] = useState('newest'); 
 
+    useEffect(() => {
+      document.title = 'RoamMates';
+    }, []);
+
   useEffect(() => {
     const fetchPosts = async () => {
       const { data, error } = await supabase.from('posts').select('*');

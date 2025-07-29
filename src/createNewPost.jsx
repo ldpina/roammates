@@ -18,11 +18,20 @@ function CreateNewPost() {
     setError(null);
 
     try {
-      const { data, error } = await supabase
-        .from('posts')  
-        .insert([
-          {title:postTitle, content:postContent, img:postImg, location:postLocation}
-        ]);
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+
+      const { data, error } = await supabase.from('posts').insert([
+        {
+          title: postTitle, 
+          content: postContent,
+          img: postImg,
+          upvotes: 0,
+          location: postLocation,
+          user_id: user.id,
+        }
+      ]);
 
       if (error) throw error;
 
@@ -48,16 +57,18 @@ function CreateNewPost() {
             onChange={(e) => setPostTitle(e.target.value)}
             required
           />
+        </label>
+
         <label>
           Location:
           <textarea
             type="text"
             value={postLocation}
             onChange={(e) => setPostLocation(e.target.value)}
-            placeholder='(city,country)'
+            placeholder="City, State, Country"
           />
         </label>
-        </label>
+
         <label>
           Content:
           <textarea
@@ -66,16 +77,17 @@ function CreateNewPost() {
             required
           />
         </label>
+
         <label>
           Image URL:
           <input
             type="text"
             value={postImg}
             onChange={(e) => setPostImg(e.target.value)}
-            placeholder='optional'
-            
+            placeholder="optional"
           />
         </label>
+
         <button type="submit" disabled={isSubmitting}>
           {isSubmitting ? 'Submitting...' : 'Submit Post'}
         </button>
@@ -85,4 +97,3 @@ function CreateNewPost() {
 }
 
 export default CreateNewPost;
-

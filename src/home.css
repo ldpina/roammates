@@ -97,3 +97,22 @@
   
 }
 
+.postUser {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.postAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.postUsername {
+  font-weight: bold;
+}
+
+
